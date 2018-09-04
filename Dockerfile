@@ -5,7 +5,7 @@ WORKDIR /
 ENV GOLANGCI_LINT_VERSION=latest
 
 RUN apk update \
-    # Update and updgrage alpine packages
+    # Update and upgrade alpine packages
     && apk upgrade \
     # Install required packages 
     && apk --no-cache add ca-certificates bash git make \
