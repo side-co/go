@@ -2,7 +2,7 @@ FROM golang:alpine
 
 WORKDIR /
 
-ENV GOLANGCI_LINT_VERSION=latest
+ENV GOLANGCI_LINT_VERSION=v1.11.2
 
 RUN apk update \
     # Update and upgrade alpine packages
