@@ -2,5 +2,5 @@
 
 Full packaged image for go microservices:
 
-- dep (latest)
-- golangci-lint (latest)
+- dep (v0.5.0)
+- golangci-lint (v1.11.3)
