@@ -1,9 +1,10 @@
-FROM golang:stretch
+FROM golang:1.11.4-stretch
 
 WORKDIR /
 
 ENV CC=clang-6.0
-ENV GOLANGCI_LINT_VERSION=v1.12.3
+ENV GOLANGCI_LINT_VERSION=v1.12.5
+ENV GO_SWAGGER_VERSION=0.18.0
 
 RUN \
     # Add apt key for LLVM repository
@@ -11,6 +12,8 @@ RUN \
     # Add LLVM apt repository
     && echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
     && echo "deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
+    # Add go-swagger apt repository
+    && echo "deb http://dl.bintray.com/go-swagger/goswagger-debian ubuntu main" | tee -a /etc/apt/sources.list \
     # Update packages
     && apt-get update \
     # Upgrade packages
@@ -19,6 +22,9 @@ RUN \
     && apt-get install -y --no-install-recommends \
     ca-certificates \
     clang-6.0 \
+    # Install go-swagger packages (--allow-unauthenticated for swagger only)
+    && apt-get install -y --no-install-recommends --allow-unauthenticated \
+    swagger=${GO_SWAGGER_VERSION} \
     # Install dep
     && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh \
     # Install golintci-lint
