@@ -1,10 +1,10 @@
-FROM golang:1.11.5-stretch
+FROM golang:1.12.4-stretch
 
 WORKDIR /
 
 ENV CC=clang-6.0
-ENV GOLANGCI_LINT_VERSION=v1.14.0
-ENV GO_SWAGGER_VERSION=0.18.0
+ENV GOLANGCI_LINT_VERSION=v1.16.0
+ENV GO_SWAGGER_VERSION=0.19.0
 
 RUN \
     # Add apt key for LLVM repository
