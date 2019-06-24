@@ -1,6 +1,6 @@
 # go
 
-Based on **golang:1.12.5-stretch**
+Based on **golang:1.12.6-stretch**
 
 Image used to make our go builds and Gitlab CI pipelines.
 
