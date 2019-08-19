@@ -7,6 +7,6 @@ Image used to make our go builds and Gitlab CI pipelines.
 Added tools:
 
 - **clang**: v6.0
-- **dep**: v0.5.3
+- **dep**: v0.5.4
 - **golangci-lint**: v1.17.1
-- **goswagger**: v0.19.0
+- **goswagger**: v0.20.0
