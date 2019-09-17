@@ -8,5 +8,5 @@ Added tools:
 
 - **clang**: v6.0
 - **dep**: v0.5.4
-- **golangci-lint**: v1.17.1
+- **golangci-lint**: v1.18.0
 - **goswagger**: v0.20.1
