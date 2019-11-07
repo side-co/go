@@ -6,8 +6,8 @@ ENV CC=clang-6.0
 ENV GOLANGCI_LINT_VERSION=v1.21.0
 ENV GO_SWAGGER_VERSION=0.21.0
 
-# This is required to let go mod knows that "gitlab.side.co/*" packages are private
-ENV GOPRIVATE=gitlab.side.co/* 
+# This will force go build to use the vendor folder
+ENV GOFLAGS=-mod=vendor
 
 RUN \
     # Add apt key for LLVM repository
