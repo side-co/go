@@ -13,6 +13,9 @@ RUN \
     # Add LLVM apt repository
     && echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
     && echo "deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
+    # Install Yarn for embed services
+    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     # Update packages
     && apt-get update \
     # Upgrade packages
@@ -21,6 +24,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
     ca-certificates \
     clang-6.0 \
+    yarn \
     # Install golintci-lint
     && curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $GOPATH/bin ${GOLANGCI_LINT_VERSION} \
     # Clean up install of dep and golangci-lint
