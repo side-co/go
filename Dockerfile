@@ -1,5 +1,4 @@
-FROM golang:1.16.8-bullseye
-WORKDIR /
+FROM golang:1.16.8-buster
 
 ENV CC=clang-6.0
 ENV GOLANGCI_LINT_VERSION=v1.21.0
