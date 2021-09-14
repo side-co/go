@@ -19,7 +19,6 @@ RUN \
     #Install Node
     && wget -qO- https://deb.nodesource.com/setup_16.x | bash - \
     && apt install -f -y nodejs \
-    yarn \
     && echo "deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
     # Install Yarn for embed services
     && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
@@ -29,6 +28,8 @@ RUN \
     ca-certificates \
     clang-6.0 \
     tree \
+    && apt remove cmdtest \
+    && apt-get install -y yarn \
     # Install golintci-lint
     && curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $GOPATH/bin ${GOLANGCI_LINT_VERSION} \
     # Clean up install of dep and golangci-lint
