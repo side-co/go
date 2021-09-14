@@ -29,6 +29,7 @@ RUN \
     clang-6.0 \
     tree \
     && apt remove cmdtest \
+    && apt remove yarn \
     && apt-get install -y yarn \
     # Install golintci-lint
     && curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $GOPATH/bin ${GOLANGCI_LINT_VERSION} \
