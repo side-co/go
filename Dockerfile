@@ -12,18 +12,18 @@ RUN \
     wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - \
     # Add LLVM apt repository
     && echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
-    # Update packages
-    && apt-get update \
-    # Upgrade packages
-    && apt-get upgrade -y \
     #Install Node
     && wget -qO- https://deb.nodesource.com/setup_16.x | bash - \
-    && apt install -f -y nodejs \
     && echo "deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
     # Install Yarn for embed services
     && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    # Update packages
+    && apt-get update \
+    # Upgrade packages
+    && apt-get upgrade -y \
     # Install required packages packages
+    && apt install -f -y nodejs \
     && apt-get install -y --no-install-recommends \
     ca-certificates \
     clang-6.0 \
