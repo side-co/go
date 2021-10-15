@@ -1,8 +1,7 @@
-FROM golang:1.16.8-buster
+FROM golang:1.17.2-stretch
 
 ENV CC=clang-6.0
 ENV GOLANGCI_LINT_VERSION=v1.21.0
-ENV GO_SWAGGER_VERSION=0.21.0
 
 # This will force go build to use the vendor folder
 ENV GOFLAGS=-mod=vendor
@@ -14,8 +13,6 @@ RUN \
     && echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
     && echo "deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
     # Install Yarn for embed services
-    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     # Update packages
     && apt-get update \
     # Upgrade packages
@@ -23,8 +20,7 @@ RUN \
     # Install required packages packages
     && apt-get install -y --no-install-recommends \
     ca-certificates \
-    clang-6.0 \
-    yarn \
+    clang-6.0 
     # Install golintci-lint
     && curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $GOPATH/bin ${GOLANGCI_LINT_VERSION} \
     # Clean up install of dep and golangci-lint
