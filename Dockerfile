@@ -20,7 +20,7 @@ RUN \
     # Install required packages packages
     && apt-get install -y --no-install-recommends \
     ca-certificates \
-    clang-6.0 
+    clang-6.0 \
     # Install golintci-lint
     && curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $GOPATH/bin ${GOLANGCI_LINT_VERSION} \
     # Clean up install of dep and golangci-lint
