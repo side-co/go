@@ -1,7 +1,7 @@
 FROM golang:1.17.2-stretch
 
 ENV CC=clang-6.0
-ENV GOLANGCI_LINT_VERSION=v1.21.0
+ENV GOLANGCI_LINT_VERSION=v1.42.1
 
 # This will force go build to use the vendor folder
 ENV GOFLAGS=-mod=vendor
