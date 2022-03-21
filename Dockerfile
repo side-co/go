@@ -1,7 +1,10 @@
-FROM golang:1.17.2-stretch
+FROM golang:1.18.1-stretch
 
 ENV CC=clang-6.0
-ENV GOLANGCI_LINT_VERSION=v1.44.2
+ENV GOLANGCI_LINT_VERSION=v1.45.2
+
+# Used by golangci-lint to determine which Go versions to run the linters on
+ENV GOVERSION=1.18.1
 
 # This will force go build to use the vendor folder
 ENV GOFLAGS=-mod=vendor
