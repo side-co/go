@@ -1,9 +1,9 @@
-FROM golang:1.13.4-stretch
+FROM golang:1.18.1-stretch
 
 WORKDIR /
 
 ENV CC=clang-6.0
-ENV GOLANGCI_LINT_VERSION=v1.21.0
+ENV GOLANGCI_LINT_VERSION=v1.45.2
 ENV GO_SWAGGER_VERSION=0.21.0
 
 # This will force go build to use the vendor folder
