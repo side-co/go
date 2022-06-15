@@ -6,7 +6,7 @@ ENV CC=clang-6.0
 # Used by golangci-lint to determine which Go versions to run the linters on
 ENV GOVERSION=1.18.1
 ENV GOLANGCI_LINT_VERSION=v1.45.2
-ENV GO_SWAGGER_VERSION=0.21.0
+ENV GO_SWAGGER_VERSION=0.23.0
 
 # This will force go build to use the vendor folder
 ENV GOFLAGS=-mod=vendor
@@ -17,8 +17,6 @@ RUN \
     # Add LLVM apt repository
     && echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
     && echo "deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | tee -a /etc/apt/sources.list \
-    # Add go-swagger apt repository
-    && echo "deb http://dl.bintray.com/go-swagger/goswagger-debian ubuntu main" | tee -a /etc/apt/sources.list \
     # Update packages
     && apt-get update \
     # Upgrade packages
@@ -28,8 +26,8 @@ RUN \
     ca-certificates \
     clang-6.0 \
     # Install go-swagger packages (--allow-unauthenticated for swagger only)
-    && apt-get install -y --no-install-recommends --allow-unauthenticated \
-    swagger=${GO_SWAGGER_VERSION} \
+    && curl -o /usr/local/bin/swagger -L'#' https://github.com/go-swagger/go-swagger/releases/download/v${GO_SWAGGER_VERSION}/swagger_$(echo `uname`|tr '[:upper:]' '[:lower:]')_amd64
+    && chmod +x /usr/local/bin/swagger \
     # Install dep
     && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh \
     # Install golintci-lint

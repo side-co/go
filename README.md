@@ -9,4 +9,4 @@ Added tools:
 - **clang**: v6.0
 - **dep**: v0.5.4
 - **golangci-lint**: v1.45.2
-- **goswagger**: v0.21.0
+- **goswagger**: v0.23.0
