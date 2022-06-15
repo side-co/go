@@ -26,7 +26,7 @@ RUN \
     ca-certificates \
     clang-6.0 \
     # Install go-swagger packages (--allow-unauthenticated for swagger only)
-    && curl -o /usr/local/bin/swagger -L'#' https://github.com/go-swagger/go-swagger/releases/download/v${GO_SWAGGER_VERSION}/swagger_$(echo `uname`|tr '[:upper:]' '[:lower:]')_amd64
+    && curl -o /usr/local/bin/swagger -L'#' https://github.com/go-swagger/go-swagger/releases/download/v${GO_SWAGGER_VERSION}/swagger_$(echo `uname`|tr '[:upper:]' '[:lower:]')_amd64 \
     && chmod +x /usr/local/bin/swagger \
     # Install dep
     && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh \
