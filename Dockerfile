@@ -3,6 +3,8 @@ FROM golang:1.18.1-stretch
 WORKDIR /
 
 ENV CC=clang-6.0
+# Used by golangci-lint to determine which Go versions to run the linters on
+ENV GOVERSION=1.18.1
 ENV GOLANGCI_LINT_VERSION=v1.45.2
 ENV GO_SWAGGER_VERSION=0.21.0
 
