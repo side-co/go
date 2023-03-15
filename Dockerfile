@@ -1,4 +1,4 @@
-FROM golang:1.20.2
+FROM golang:1.20.2-buster
 
 ENV CC=clang-6.0
 ENV GOLANGCI_LINT_VERSION=v1.45.2
