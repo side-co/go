@@ -25,7 +25,7 @@ RUN \
     ca-certificates \
     clang-6.0 \
     # Install golintci-lint
-    && curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $GOPATH/bin ${GOLANGCI_LINT_VERSION} \
+    && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $GOPATH/bin ${GOLANGCI_LINT_VERSION} \
     # Clean up install of dep and golangci-lint
     && rm -rf /tmp/* \
     # Clean up APT when done.
