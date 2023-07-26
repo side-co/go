@@ -1,10 +1,10 @@
-FROM golang:1.20.2-buster
+FROM golang:1.20.5-buster
 
 ENV CC=clang-6.0
 ENV GOLANGCI_LINT_VERSION=v1.52.2
 
 # Used by golangci-lint to determine which Go versions to run the linters on
-ENV GOVERSION=1.20.2
+ENV GOVERSION=1.20.5
 
 # This will force go build to use the vendor folder
 ENV GOFLAGS=-mod=vendor
