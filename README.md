@@ -1,6 +1,6 @@
 # go
 
-Based on **golang:1.22.1-bookworm**
+Based on **golang:1.22.4-bookworm**
 
 Image used to make our go builds and Gitlab CI pipelines.
 
