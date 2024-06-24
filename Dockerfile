@@ -2,7 +2,7 @@ FROM golang:1.22.4-bookworm
 
 WORKDIR /
 
-ENV CC=clang-6.0
+ENV CC=clang
 ENV GOLANGCI_LINT_VERSION=v1.51.2
 
 RUN \
