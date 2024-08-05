@@ -1,7 +1,7 @@
-FROM golang:1.16.8-buster
+FROM golang:1.20.2-buster
 
 ENV CC=clang-6.0
-ENV GOLANGCI_LINT_VERSION=v1.21.0
+ENV GOLANGCI_LINT_VERSION=v1.51.2
 ENV GO_SWAGGER_VERSION=0.21.0
 
 # This will force go build to use the vendor folder
