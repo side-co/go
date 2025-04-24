@@ -1,10 +1,10 @@
-FROM golang:1.20.14-bookworm
+FROM golang:1.24.2-bookworm
 
 WORKDIR /
 
 ENV CC=clang-14
-ENV GOLANGCI_LINT_VERSION=v1.51.2
-ENV GO_SWAGGER_VERSION=0.23.0
+ENV GOLANGCI_LINT_VERSION=v2.1.2
+ENV GO_SWAGGER_VERSION=0.31.0
 
 # This will force go build to use the vendor folder
 ENV GOFLAGS=-mod=vendor
